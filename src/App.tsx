@@ -3,6 +3,8 @@ import { Home } from "./pages/home/Home"
 import { Users } from "./pages/users/Users";
 import { Products } from "./pages/products/Products";
 import { Login } from "./pages/login/Login";
+import { User } from "./pages/user/User";
+import { Product } from "./pages/product/Product";
 
 import { Navbar } from "./components/navbar/Navbar";
 import { Footer } from "./components/footer/Footer";
@@ -47,6 +49,14 @@ function App() {
         {
           path:"/products",
           element : <Products/>,    
+        },
+        {
+          path:"/user/:id",
+          element : <User/>,    
+        },
+        {
+          path:"/product/:id",
+          element : <Product/>,    
         },
       ]
     },
