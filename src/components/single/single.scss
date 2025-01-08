@@ -1,5 +1,11 @@
+@import "../../styles/responsive.scss";
+
 .single{
     display: flex;
+
+    @include xl{
+        flex-direction: column;
+    }            
 
     .view{
         flex: 1;

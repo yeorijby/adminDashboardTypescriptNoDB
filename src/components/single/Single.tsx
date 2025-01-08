@@ -53,7 +53,7 @@ export const Single = (props:Props) => {
                 <Tooltip  />
                 <Legend />
                 {props.chart.dataKeys.map(dataKey=>(
-                    <Line type="monotone" dataKey={dataKey.name} stroke={dataKey.color} activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey={dataKey.name} stroke={dataKey.color} />
                 ))}
                 </LineChart>
             </ResponsiveContainer>        

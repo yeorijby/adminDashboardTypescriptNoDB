@@ -36,11 +36,6 @@ export const Add = (props:Props) => {
         }
     });
 
-    const handleDelete = (id:number) => {
-        // delete the item
-        mutation.mutate(id);
-    }
-
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
 
