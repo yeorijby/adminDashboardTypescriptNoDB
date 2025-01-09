@@ -3,10 +3,10 @@ import './products.scss';
 import { DataTable } from '../../components/dataTable/DataTable';
 import { Add } from '../../components/add/Add';
 import { GridColDef } from '@mui/x-data-grid';
-import { products } from '../../data';
+//import { products } from '../../data';
 import { useQuery } from '@tanstack/react-query';
 
-const columns: GridColDef<(typeof rows)[number]>[] = [
+const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 90 },
   {
       field: 'img',
@@ -73,8 +73,8 @@ export const Products = () => {
         <h1>Products</h1>
         <button onClick={()=>{setOpen(true)}}>Add New Product</button>
       </div>
-      { isLoading ? ("Loading ...") : (<DataTable slug="products" columns={columns} rows={data}/>)}
-      {open && <Add slug="products" columns={columns} setOpen={setOpen}/>}      
+      { isLoading ? ("Loading ...") : (<DataTable slug="product" columns={columns} rows={data}/>)}
+      { open && <Add slug="product" columns={columns} setOpen={setOpen}/>}      
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { CartesianGrid, Tooltip, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { Tooltip, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import './single.scss';
 
 type Props = {
@@ -25,7 +25,7 @@ export const Single = (props:Props) => {
           </div>  
           <div className="details">
             {
-                Object.entries(props.info).map((item, index) => (
+                Object.entries(props.info).map((item) => (
                     <div className="item" key={item[0]}>
                         <span className="itemTitle">{item[0]}</span>
                         <span className="itemValue">{item[1]}</span>
@@ -52,7 +52,7 @@ export const Single = (props:Props) => {
                 <YAxis />
                 <Tooltip  />
                 <Legend />
-                {props.chart.dataKeys.map(dataKey=>(
+                {props.chart.dataKeys.map((dataKey)=>(
                     <Line type="monotone" dataKey={dataKey.name} stroke={dataKey.color} />
                 ))}
                 </LineChart>
@@ -62,8 +62,7 @@ export const Single = (props:Props) => {
       <div className="activities">
         <h2>Last Activities</h2>
         {props.activities && <ul>
-          {props.activities.map(activity => (
-
+          {props.activities.map((activity) => (
           <li key={activity.text}>
             <div>
               <p>{activity.text}</p>

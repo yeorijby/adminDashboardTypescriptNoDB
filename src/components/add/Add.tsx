@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 type Props = {
     slug : string;
-    columns: GridColDef;
+    columns: GridColDef[];
     setOpen : React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -12,7 +12,7 @@ export const Add = (props:Props) => {
     const queryClient = useQueryClient();
     const mutation = useMutation({
         mutationFn: () => {
-            console.log(props.slug);
+            //console.log(props.slug);
             return fetch(`http://localhost:8800/api/${props.slug}`, {
                 method: "post",
                 headers :{
@@ -32,7 +32,7 @@ export const Add = (props:Props) => {
             });
         },
         onSuccess: ()=>{
-            queryClient.invalidateQueries([`all${props.slug}`]);
+            queryClient.invalidateQueries({queryKey:[`all${props.slug}`]});//-
         }
     });
 
